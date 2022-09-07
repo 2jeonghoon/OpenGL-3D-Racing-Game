@@ -4,7 +4,7 @@
 #include"gl/glut.h"
 #include "texture.h"
 #define BITMAP_ID 0x3D42
-//读纹理图片  
+
 unsigned char *LoadBitmapFile(const char *filename, BITMAPINFOHEADER *bitmapInfoHeader)
 {
 	FILE *filePtr;    // 文件指针  

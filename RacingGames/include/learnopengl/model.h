@@ -33,20 +33,17 @@ unsigned int TextureFromFile(const char* path, const string& directory, bool gam
 class Model {
 public:
     /*  模型数据  */
-    vector<Texture> textures_loaded; // 保存所有加载过的纹理，以优化被反复使用的相同纹理
+    vector<Texture> textures_loaded; 
     vector<Mesh> meshes;
     string directory;
     bool gammaCorrection;
 
-    /*  函数  */
-    // 构造函数，从路径中读取模型
     Model(string const& path, bool gamma = false)
         : gammaCorrection(gamma)  
     {
         loadModel(path);
     }
 
-    // 绘制模型的所有网格
     void Draw(Shader shader)
     {
         for (unsigned int i = 0; i < meshes.size(); i++) {
@@ -55,23 +52,18 @@ public:
     }
 
 private:
-    /*  方法  */
-    // 从文件加载模型支持 ASSIMP 扩展并存储在网格生成的网格向量
     void loadModel(string const& path)
     {
-        // 通过 ASSIMP 加载模型文件
         Assimp::Importer importer;
-        // 参数：将模型所有的图元形状变换为三角形 | 在处理的时候翻转y轴的纹理坐标 | 为每个加载的顶点计算出柔和的Tangent和Bitangent向量
         const aiScene* scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);
-        // 判断是否有错误
+
         if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) {
             cout << "ERROR::ASSIMP:: " << importer.GetErrorString() << endl;
             return;
         }
-        // 检索文件路径的目录路径
+
         directory = path.substr(0, path.find_last_of('/'));
 
-        // 递归处理 ASSIMP 的根节点
         processNode(scene->mRootNode, scene);
     }
 

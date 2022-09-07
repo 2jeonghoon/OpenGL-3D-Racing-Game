@@ -101,7 +101,7 @@ GLuint BgInit_1(int bgshaderProgram) {
 
 	stbi_set_flip_vertically_on_load(true);
 	int width, height, nrChannels;
-	unsigned char* data = stbi_load("asset/pictures/carselect1.jpg", &width, &height, &nrChannels, 0);
+	unsigned char* data = stbi_load("asset/pictures/carselect.jpg", &width, &height, &nrChannels, 0);
 	if (data)
 	{
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
@@ -168,7 +168,7 @@ GLuint BgInit_2(int bgshaderProgram2) {
 
 	stbi_set_flip_vertically_on_load(true);
 	int width, height, nrChannels;
-	unsigned char* data2 = stbi_load("asset/pictures/carselect2.jpg", &width, &height, &nrChannels, 0);
+	unsigned char* data2 = stbi_load("asset/pictures/carselect.jpg", &width, &height, &nrChannels, 0);
 	if (data2)
 	{
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data2);
@@ -212,15 +212,16 @@ void Drawcarselect1(GLuint bgtexture, GLuint bgshaderProgram, GLuint bgVAO, Shad
 	//projection2 = glm::ortho(-1.0f, 1.0f, -1.0f, 1.0f, -100.0f, 100.0f);
 	projection2 = glm::perspective(glm::radians(60.0f), (float)1500 / (float)800, 0.01f, 100.0f);
 	glm::mat4 view2 = glm::mat4(1.0f);
-	view2 = glm::translate(view2, glm::vec3(16.5f, -12.5f, -53.0f));
+	view2 = glm::translate(view2, glm::vec3(0.0f, 0.0f, -53.0f));
 	view2 = glm::scale(view2, glm::vec3(0.03f, 0.03f, 0.03f));
 	carShader_1.setMat4("projection", projection2);
 	carShader_1.setMat4("view", view2);
 
 	glm::mat4 model = glm::mat4(1.0f);
+	model = glm::scale(model, glm::vec3(100.0f, 100.0f, 100.0f));
 
 		// it's a bit too big for our scene, so scale it down
-	model = glm::translate(model, glm::vec3(0.0f, -1.0f, +100.0f)); // translate it down so it's at the center of the scene
+	model = glm::translate(model, glm::vec3(0.0f, -1.0f, 0.0f)); // translate it down so it's at the center of the scene
 	model = glm::rotate(model, 1 * (float)glfwGetTime() / 2, glm::vec3(-0.0f, 1.0f, 0.0f));
 	carShader_1.setMat4("model", model);
 	ourModel_1.Draw(carShader_1);
@@ -256,7 +257,7 @@ void Drawcarselect2(GLuint bgtexture2, GLuint bgshaderProgram2, GLuint bgVAO2, S
 
 	glm::mat4 model = glm::mat4(1.0f);
 
-	model = glm::scale(model, glm::vec3(0.04f, 0.04f, 0.04f));	// it's a bit too big for our scene, so scale it down
+	model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
 	model = glm::translate(model, glm::vec3(0.0f, -1.0f, +100.0f)); // translate it down so it's at the center of the scene
 	model = glm::rotate(model, 1 * (float)glfwGetTime() / 2, glm::vec3(-0.0f, 1.0f, 0.0f));
 	carShader_1.setMat4("model", model);

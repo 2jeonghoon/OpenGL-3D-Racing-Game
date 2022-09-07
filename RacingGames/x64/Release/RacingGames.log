@@ -1,0 +1,16 @@
+﻿  camera.cpp
+C:\Users\2jh09\Desktop\Github\OpenGL-3D-Racing-Game\RacingGames\camera.cpp(1,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'camera.h': No such file or directory
+  loadobj.cpp
+C:\Users\2jh09\Desktop\Github\OpenGL-3D-Racing-Game\RacingGames\loadobj.cpp(1,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'loadobj.h': No such file or directory
+  main.cpp
+C:\Users\2jh09\Desktop\Github\OpenGL-3D-Racing-Game\RacingGames\main.cpp(6,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'glad/glad.h': No such file or directory
+  mymodel.cpp
+C:\Users\2jh09\Desktop\Github\OpenGL-3D-Racing-Game\RacingGames\mymodel.cpp(1,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'myModel.h': No such file or directory
+  objshape.cpp
+C:\Users\2jh09\Desktop\Github\OpenGL-3D-Racing-Game\RacingGames\objshape.cpp(2,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'objshape.h': No such file or directory
+  readmtl.cpp
+C:\Users\2jh09\Desktop\Github\OpenGL-3D-Racing-Game\RacingGames\readmtl.cpp(1,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'readmtl.h': No such file or directory
+  stb_image.cpp
+C:\Users\2jh09\Desktop\Github\OpenGL-3D-Racing-Game\RacingGames\stb_image.cpp(2,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'stb_image.h': No such file or directory
+  texture.cpp
+C:\Users\2jh09\Desktop\Github\OpenGL-3D-Racing-Game\RacingGames\texture.cpp(4,9): fatal  error C1083: 포함 파일을 열 수 없습니다. 'gl/glut.h': No such file or directory
